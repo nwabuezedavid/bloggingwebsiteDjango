@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davis_zone | view </title>
+    
+    <link rel="stylesheet" href="{% static 'css/main_overallcon.css ' %}">
+    <link rel="stylesheet" href="{% static 'ba.3/bootstrap-icons.css ' %}">
+    <link rel="stylesheet" href="{% static 'css/navigation.css ' %}">
+</head>
+<body>
+
+    <!-- first Nav -->
+    {% include 'html/index.html' %}
+
+
+   
+    <div class="slideCon">
+        <div class="slicActiobn " style="background:white;" style="height:100vh !important; width:100%;">
+            {% for allItemImgaplusCy in filtedNs  %}
+            {% if allItemImgaplusCy.imgae %}
+             <img class="hideSlid showSlid"   src="{{allItemImgaplusCy.imgae.url}}" alt="" style="height:100vh !important; width:100%;">
+      <contain class="hideSlidtext showSlidtext" style="bottom:9%; background:rgba(0,4,31); color:white; width:fit-content ; left:12px; padding:33px">
+            <h2 style="color:white;">
+                {{allItemImgaplusCy.title | truncatewords:12 | upper}}
+            </h2>
+           <span class="con-Text" style=" padding:22px; border-radius:2px;background:rgba(0,4,31, 0.22); width:fit-content">
+               <small style="background:none; color:white"> <i class="bi bi-eye" style="color:white"></i>  {{allItemImgaplusCy.like}} k</small>
+               <a href="{% url 'viewPage'  allItemImgaplusCy.id %}"style="color:white;">{{allItemImgaplusCy.category }}</a>
+               {% if allItemImgaplusCy.twitter %}
+               <a href=""><i class="bi bi-twitter"></i><icon></icon></a>
+               
+               {% endif %}
+               {% if allItemImgaplusCy.whatsapp %}
+               <a href=""><i class="bi bi-whatsapp"></i><icon></icon></a>
+               
+               {% endif %}
+               {% if allItemImgaplusCy.facebook %}
+               <a href=""><i class="bi bi-facebook"></i><icon></icon></a>
+               
+               {% endif %}
+           </span>
+        </contain>
+        {% endif %}
+        {% endfor %}
+       <big class="chericon">
+           <i class="bi bi-chevron-left left-con"></i>
+           <i class="bi bi-chevron-right rght-con"></i>
+       </big>
+           </div>
+   
+         </div>
+
+   
+
+         <center>
+             <h2>MOst Viewd POst</h2>
+         </center>
+    <!-- endseconNav -->
+
+    <main class="main-last">
+        <div class="sec-left-main-last">
+    {% for filtedNs in filtedNs  %}
+            {% if filtedNs.imgae %}
+            
+            <div class="last-sd animated  " >
+                <div class="lastchild">
+                    <img src="{{filtedNs.imgae.url}}"alt="">
+                    <span>
+                        <h4>    
+                        {{filtedNs.text | truncatewords:10}}</h4>
+                        <a href="{% url 'viewPage'  filtedNs.id %}" class="btn-lastsh" style="background:red; color:white;"> READ MORE   >>></a>
+ {% if request.user.is_authenticated %}
+ <a href="{% url 'edit'  filtedNs.id %}" class="btn-lastsh"style="background:black;color:white;"> Edit Post</a>
+ <a href="{% url 'delete'  filtedNs.id %}" class="btn-lastsh"style="background:red;color:white;"> delete Post</a>
+
+ {% endif %}
+                        <small>{{filtedNs.dateCreated}}</small>
+                    </span>
+                    <header class="view-sign">
+                        <i class="bi bi-eye"></i>
+                        <p>{{filtedNs.like}}K</p>
+                    </header>
+                </div>
+            </div>
+            {% endif %}
+            {% if filtedNs.videoSl %}
+            
+         
+            <div class="lvideo animated" style="background:white">
+                <div class="videoLAst" >
+                    <video class="videoPost" controls src="{{filtedNs.videoSl.url}}"  style="z-index: 999; width:100%; "  alt="">
+                    </div>
+                    <a href="{% url 'viewPage'  filtedNs.id %}" class="watcxh">View Detail >>></a>
+                    {% if request.user.is_authenticated %}
+ <a href="{% url 'edit'  filtedNs.id %}" class="btn-lastsh"style="background:black;color:white; width:fit-content; padding:12px;"> Edit Post</a>
+ <a href="{% url 'delete'  filtedNs.id %}" class="btn-lastsh"style="background:white;color:red; width:fit-content; padding:12px;"> delete Post</a>
+ 
+ {% endif %}
+                    <p   style="color:white; width:90% ;margin:10px 3px;padding:0; align-self:center !important; display:flex;"   >
+                      {{filtedNs.title|upper }}</p>
+                      
+                    <small class="date__sa">{{filtedNs.dateCreated}}</small>
+                   
+                </div>
+                {% endif %}
+                {% endfor %}
+         </div>
+      </main>
+
+
+
+          {% comment %} <div class="paginate">
+              <span>
+                  <a href="" ></a><i class="bi bi-chevron-left"></i></a>
+                  <a href="" class="active">1</a>
+                  <a href="">2</a>
+                  <a href="">3</a>
+                  <a href="">4</a>
+                  <a href="">...</a>
+                  <a href=""><i class="bi bi-chevron-right"></i></a>
+              </span>
+          </div> {% endcomment %}
+        
+
+
+
+          {% comment %} <center>
+            <h4>
+                copyRight & 2022
+            </h4>
+          </center> {% endcomment %}
+    <script src="{% static 'js/homePage.js' %}"></script>
+    <script src="{% static 'js/adminCreate.js' %}"></script>
+</body>
+</html>

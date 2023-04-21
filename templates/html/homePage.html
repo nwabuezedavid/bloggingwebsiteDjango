@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% for recent__sec in recent__sec %}
+    <meta name="discription" content="{{recent__sec.title}}">
+{% endfor %}
+    <title>Davis_zone</title>
+
+    <link rel="stylesheet" href="{% static 'css/homePage.css ' %}">
+    <link rel="stylesheet" href="{% static 'ba.3/bootstrap-icons.css ' %}">
+    <link rel="stylesheet" href="{% static 'css/navigation.css ' %}">
+</head>
+<body>
+
+  
+
+{% include 'html/index.html' %}
+
+
+  
+
+
+    <!-- Main -->
+    
+<section class="sec-3">
+
+  <main class="enteainment">
+      <div class="sec-left-main-one">
+          <center>
+              <h2>Entertainment</h2>
+          </center>
+          {% for entertainment in entainment__sec %}
+          {% if  entertainment.id <= 5 %}
+    {% if entertainment.imgae %}
+
+          <div>
+              <a href="{% url 'viewPage'  entertainment.id %}" class="main-infor">
+                  <img src="{{entertainment.imgae.url}}" alt="">
+                  <span>
+                      <h4>
+                         {{entertainment.title}}</h4>
+                      <b>
+
+                          <strong>{{entertainment.like}}K views</strong><br>
+                          <small style="font-size:9px;">{{entertainment.dateCreated}}</small>
+                        </b>
+                  </span>
+              </a >
+          </div>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+        
+      </div>
+      <div class="sec-left-main-one">
+          <center>
+              <h2>Sport</h2>
+          </center>
+          {% for sport in sport__sec %}
+          {% if  sport.id >= 5  < 8 %}
+          
+         {% if sport.imgae  %}
+
+          <div>
+              <a href="{% url 'viewPage'  sport.id %}" class="main-infor">
+                  <img src="{{sport.imgae.url}}" alt="">
+                  <span>
+                      <h4>{{sport.title}}</h4>
+                      <b>
+
+                          <strong>{{sport.like}}k views</strong>
+                          <small>{{sport.dateCreated}}</small>
+                        </b>
+                  </span>
+              </a>
+          </div>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+      </div>
+      
+  </main>
+  <main class="slidesss">
+      <div class="slideCon">
+     <div class="slicActiobn ">
+        {% for allItemImgaplusCy in recent__sec  %}
+        {% if allItemImgaplusCy.imgae %}
+         <img class="hideSlid " src="{{allItemImgaplusCy.imgae.url}}" alt="" style="height:200px ; width:100%;">
+  <contain class="hideSlidtext showSlidtext">
+        <h2>
+            {{allItemImgaplusCy.title}}
+        </h2>
+       <span class="con-Text">
+           <small> {{allItemImgaplusCy.like}}k views</small> <br>
+           <a href="">{{allItemImgaplusCy.category}}</a>
+           {% if allItemImgaplusCy.twitter %}
+           <a href=""><i class="bi bi-twitter"></i><icon></icon></a>
+           
+           {% endif %}
+           {% if allItemImgaplusCy.whatsapp %}
+           <a href=""><i class="bi bi-whatsapp"></i><icon></icon></a>
+           
+           {% endif %}
+           {% if allItemImgaplusCy.facebook %}
+           <a href=""><i class="bi bi-facebook"></i><icon></icon></a>
+           
+           {% endif %}
+  </span>
+    </contain>
+    {% endif %}
+    {% endfor %}
+    <big class="chericon">
+        <i class="bi bi-chevron-left left-con"></i>
+        <i class="bi bi-chevron-right rght-con"></i>
+    </big>
+        </div>
+
+      </div>
+      <center class="advert__header">ADVERTISMENT </center>
+      <div class="recent__container">
+          <container><H3>RECENT POST</H3></container>
+          {% for allItemImgaplusCy in recent__sec  %}
+          {% if allItemImgaplusCy.imgae %}
+    {% if allItemImgaplusCy.id <= 13  %}
+          
+          <a href="{% url 'viewPage' allItemImgaplusCy.id %}">
+              <div class="recent__child" style="background:rgba(0, 4,31);">
+                  <small >
+                      <img src="{{allItemImgaplusCy.imgae.url}}" alt="" class="recentPostImg">
+                      <b style="color:black; background:lightblue;">{{allItemImgaplusCy.category}}</b>
+                    </small>
+              <article style="background:none !important; color:white;">
+                  <h5 style=" color:white;">{{allItemImgaplusCy.title}}</h5>
+                      <h6  style=" color:white;">{{allItemImgaplusCy.like}}K views</h6>
+                      <t  style=" color:white;">{{allItemImgaplusCy.dateCreated}}</t>
+                    </article>
+                </div>
+                
+                
+            </a>
+          {% endif %}
+          {% endif %}
+
+            {% endfor %}
+      
+      </div>
+      
+  </main>
+  <style>
+    .sec-left-main-last,.last-sd{
+        height:fit-content;
+    }
+     .sec-left-main-last >*{
+         height:200px;
+         margin-top:30px;
+
+
+         
+     }
+     .imageDispaly{
+         height:200px;
+         
+     }
+ </style>
+  <main class="main-last">
+    <center>
+        <h2>MOst Viewd POst</h2>
+    </center>
+  <div class="sec-left-main-last  VIDE__si">
+    {% for allItemImga in allItemImga   %}
+    {% if allItemImga.imgae %}
+    {% if allItemImga.id <= 3  %}
+  
+      <div class="last-sd">
+
+          <div class="lastchild">
+              <img class="imageDispaly"src="{{allItemImga.imgae.url}} " alt="">
+              <span style="background:none; width:90%;">
+                  <h4 style="color:black; padding:22px">
+                      
+                {{allItemImga.text | truncatewords:20}}</h4>
+                  <a href="{% url 'viewPage' allItemImga.id %}" class="btn-lastsh"> READ MORE.....>>></a>
+                  <small>{{allItemImga.dateCreated }}.</small>
+              </span>
+              <header class="view-sign">
+                  <i class="bi bi-eye"></i>
+                  <p> {{allItemImga.like}}</p>
+              </header>
+          </div>
+      </div>
+
+      {% endif %}
+      
+  
+    
+      {% if allItemImga.video %}
+      <div class="lvideo">
+          <div class="videoLAst">
+              <video class="videoPost"  controls src="{{allItemImga.videoSl.url}}"    alt="" style="max-height:300px; ">
+              </div>
+              <a href="{% url 'viewPage' allItemImga.id %}" class="watcxh">watch now >>></a>
+              <p>{{allItemImga.text| truncatewords:10}}</p>
+              <small class="date__sa">{{allItemImga.dateCreated}}</small>
+             
+          </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  {% comment %} {% endif %} {% endcomment %}
+
+  {% endfor %}
+</main>
+</section>
+
+ <!-- endMain  -->
+
+ 
+
+
+    <center>
+        <h4>
+                copyRight & 2022
+            </h4>
+          </center>
+<script src="{% static 'js/homePage.js' %} "></script>
+</body>
+</html>

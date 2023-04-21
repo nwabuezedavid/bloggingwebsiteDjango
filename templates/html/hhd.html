@@ -1,0 +1,35 @@
+
+
+
+    
+    {% for filtedNs in filtedNs  %}
+    <div class="last-sd">
+        <div class="lastchild">
+            <img src="{{filtedNs.file.url}}" alt="">
+            <span>
+                <h4>{{filtedNs.title}}</h4>
+                <a href="" class="btn-lastsh"> READ MORE   >>></a>
+                <strong>(12)comment</strong>
+                <small>12,05,2022.</small>
+            </span>
+            <header class="view-sign">
+                <i class="bi bi-eye"></i>
+                <p>123</p>
+            </header>
+        </div>
+    </div>
+                    {% endfor %}
+ {% for filtedvide in filtedvide %}
+    <div class="lvideo">
+        <div class="videoLAst" >
+            <video class="videoPost" controls style="height:130px; max-width:100%;" src="{{filtedvide.file.url}}"  style="z-index: -9;" poster="{{filtedvide.poster.url}}" alt="">
+            </div>
+            <a href="" class="watcxh">watch now >>></a>
+            <p>
+                {{filtedvide.title}}</p>
+            <small class="date__sa">{{filtedvide.dateCreated}}</small>
+            
+        </div>
+
+</div>
+{% endfor %}

@@ -1,0 +1,80 @@
+
+    <section class="sec-1">
+        <div class="logo">
+            <h1>DAVIS_ <sub>ZONE</sub></h1>
+        </div>
+        <div>
+<ul class="hids__nav">
+    {% if request.user.is_authenticated %}
+    
+  
+    <a href="{% url 'CreatePost' %}" style="background:red; padding:12px;">create Post</a>
+    <a href="{% url 'logoutUser'  %}"style="background:white; padding:12px; color:red;">logout</a>
+  {% endif %}
+</ul>
+<form action="" method="get">
+    <input type="text" name="obj" placeholder="SEARCH HERE >>>">
+    <button type="submit">search</button>
+</form>
+
+<i class="bi bi-justify-right bar__top">H</i>
+        </div>
+
+
+
+    </section>
+
+
+    <section class="sec-2">
+        <div>
+
+        <a href="/" class="active"><i class="bi bi-bank"></i></a>
+        {% for finalh in  finalh %}
+        
+        <a href="{% url 'linkview' finalh %}">{{finalh}}</a>
+        
+     
+        {% endfor %}
+        </div>
+
+    </section>
+
+    <style>
+        .videoPost,.last-sd{
+             
+          background:white ! important;
+          padding:22px ! important;
+            align-items:center ! important;
+            align-self:center ! important;
+            display:flex;
+            height:200px;
+            width:200px;
+            
+        }
+        .videoPost video{
+            z-index:99;
+            width:100%;
+        }
+        @media screen and (max-width:700px) {
+            .videoPost,.last-sd{
+             
+                max-height:220px;
+                width:100%;
+                margin-top:12px; 
+            }
+        }
+        
+        body{
+            overflow-x:hidden;
+        }
+        .paginate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 0%;
+            height: 4%;
+        }
+    </style>
+
+

@@ -1,0 +1,118 @@
+
+@mixin UniversalDisplayCenter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+@mixin UniversalDisplayColum {
+    display: flex;
+    width: 100%;
+    // flex-direction: column;
+    align-items: center;
+    
+}
+body{
+    background-color: rgb(255, 255, 255);
+
+}
+:root{
+    --main-colors:rgba(0, 4, 31);
+    --main-color:rgba(0, 0, 0, 0.377);
+    --colr-tex:rgba(2, 2, 2, 0.876);
+    --icon-co:rgba(201, 6, 6, 0);
+    --add-co:rgb(228, 50, 19);
+    --shadow-co:3px 4px 3px rgba(65, 61, 61, 0.328);
+ 
+ }
+ body{
+   background-image: url("../assets/images/photo-1575959508154-1fab18d1338b.jpeg");
+   background-attachment: fixed;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+     color: white;
+ }
+  .form__dispaly{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+    //   flex-direction: column;
+      form{
+          display: flex;
+          flex-direction: column;
+          min-width: 50%;
+          max-width: 100%;
+          backdrop-filter: blur(22px);
+          border: 2px solid rgba(255, 255, 255, 0);
+          background-color: rgba(255, 255, 255, 0.219);
+          border-radius: 22px;
+          padding: 25px;
+          height: fit-content;
+          max-height: 70%;
+
+          >*{
+              margin: 12px;
+              padding: 12px;
+          }
+          label{
+              background-color: rgba(255, 255, 255, 0.226)
+          }
+          div{
+            display: flex;
+            width: 80%;
+            align-items: center;
+            height: 100%;
+            justify-content: center;
+            justify-content: space-between;
+            >*{
+                padding: 12px;
+                border:none;
+            }
+            >*:first-child{
+                color: white;
+                background-color: red;
+                
+            }
+        }
+      }
+  }
+@media screen and (max-width:700px) {
+    .form__dispaly{
+        display: flex;
+        width: 100%;
+        min-height:100%;
+        
+        align-items: center;
+        justify-content: center;
+        
+
+        form{
+            display: flex;
+            flex-direction: column;
+            margin-top: 9%;
+            width: 100%;
+            max-width: 100%;
+            padding: 22px;
+            height: fit-content;
+            max-height: 60%;
+            >*{
+                margin: 12px;
+                padding: 12px;
+            }
+            label{
+                background-color: rgba(255, 255, 255, 0.226)
+            }
+            div{
+              display: flex;
+              width: 80%;
+              align-items: center;
+              height: 100%;
+              justify-content: center;
+              justify-content: space-between;
+          }
+        }
+    }
+}

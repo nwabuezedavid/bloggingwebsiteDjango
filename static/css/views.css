@@ -1,0 +1,62 @@
+body {
+  background-color: rgb(0, 3, 42);
+}
+
+:root {
+  --main-colors:rgba(0, 4, 31);
+  --main-color:rgba(0, 0, 0, 0.377);
+  --colr-tex:rgba(255, 255, 255, 0.876);
+  --icon-co:rgba(201, 6, 6, 0);
+  --add-co:rgb(228, 50, 19);
+  --shadow-co:3px 4px 3px rgba(65, 61, 61, 0.328);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: var(--add-co);
+}
+
+.main__view {
+  max-height: 70vh;
+  margin-top: 7pc;
+  background-color: transparent !important;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.main__view video {
+  display: flex;
+  margin-top: 12%;
+  max-height: 70vh;
+  margin-top: 22px;
+  align-items: baseline;
+}
+.main__view .bi-twitter {
+  color: rgb(60, 229, 241);
+}
+.main__view .bi-facebook {
+  color: rgb(19, 37, 206);
+}
+.main__view .bi-telegram {
+  color: cyan;
+}
+.main__view .bi-whatsapp {
+  color: rgb(2, 3, 85);
+}
+.main__view .bi-instagram {
+  color: rgb(139, 53, 53);
+}
+.main__view p {
+  color: rgb(255, 255, 255) !important;
+  padding: 12px;
+  word-spacing: 9px;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.main__view b {
+  display: flex;
+  font-size: 30px;
+  color: rgba(250, 0, 0, 0.507);
+}/*# sourceMappingURL=view.css.map */

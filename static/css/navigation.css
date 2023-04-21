@@ -1,0 +1,228 @@
+@media screen and (max-width: 807px) {
+  .sec-1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 99999999999;
+  }
+  .sec-1 .logo h1 {
+    display: flex;
+    font-size: 90% !important;
+  }
+  .sec-1 form {
+    display: flex;
+    max-width: 70% !important;
+  }
+  .sec-1 form input {
+    width: 100%;
+  }
+  .sec-1 .hids__nav {
+    background-color: rgb(0, 4, 31);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    box-shadow: 2px 3px 5px ghostwhite;
+    top: -100vh;
+    z-index: -9999 !important;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .sec-1 .hids__nav__show {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 999;
+    background-color: rgb(0, 4, 31);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    box-shadow: 2px 3px 5px ghostwhite;
+    top: 11%;
+  }
+  .sec-1 .bar__top {
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  .sec-2 {
+    margin-top: 90px;
+  }
+}
+.sec-1 {
+  background-color: var(--main-colors);
+  display: flex;
+  width: 98%;
+  height: auto;
+  overflow: hidden;
+  padding-top: 22px;
+  padding-right: 2px;
+  align-items: center;
+  justify-content: space-between;
+}
+.sec-1 > * {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  display: flex;
+  align-items: center;
+}
+.sec-1 > * ul {
+  overflow: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 12px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.sec-1 > * a {
+  padding: 6px 8px;
+  border: 1px 1px solid #ffffff;
+  color: var(--main-color);
+  color: white;
+}
+.sec-1 > * a:hover {
+  padding: 6px 8px;
+  border: 1px 1px solid rgba(179, 66, 66, 0.171);
+  color: gray;
+}
+.sec-1 > * > *:last-child {
+  margin-left: 12px;
+  gap: 12px;
+}
+.sec-1 > * form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  background-color: var(--main-color2);
+  padding: 9px;
+  height: 40px;
+  border-radius: 9px;
+}
+.sec-1 > * form button {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: var(--add-co);
+  border: none;
+  padding: 4px;
+}
+.sec-1 > * form input {
+  display: flex;
+  flex-direction: column;
+  color: var(--main-colors);
+  border: none;
+}
+
+.sec-2 {
+  display: flex;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+.sec-2 div {
+  display: flex;
+  align-items: center;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  padding-bottom: 22px;
+  justify-content: space-between;
+  gap: 12px;
+}
+.sec-2 div a {
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-grow: 1;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding: 12px;
+  box-shadow: 1px 3px 4px white;
+  margin: 7px;
+  border-right: 2px solid var(--main-colors);
+}
+.sec-2 div .active {
+  background-color: var(--main-colors);
+  border-radius: 7px;
+}
+.sec-2 div a:hover {
+  color: rgba(41, 43, 41, 0.445);
+}
+.sec-2 div a:first-child {
+  box-shadow: 1px 3px 4px rgba(255, 255, 255, 0.068);
+}
+.sec-2 div a:first-child i {
+  color: red;
+}
+
+::-webkit-scrollbar {
+  width: 1.1px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 23px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 1vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-colors);
+  color: #000;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(126, 50, 50, 0.1529411765);
+  color: #000;
+}
+
+.logo {
+  display: flex;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.logo h1 {
+  color: white;
+  font-size: xx-large;
+  font-weight: lighter;
+}
+.logo h1 sub {
+  color: var(--add-co);
+  font-style: italic;
+}
+
+@media screen and (min-width: 899) {
+  .animated {
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0;
+    transform: translateY(40vh);
+  }
+  .showas {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  background: rgb(0 0 0 / 15%) !important;
+}
+
+/*# sourceMappingURL=navigation.css.map */

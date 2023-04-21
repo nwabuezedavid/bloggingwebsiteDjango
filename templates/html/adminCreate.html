@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/adminCreate.css' %} ">
+    <link rel="stylesheet" href="{% static '/css/navigation.css' %}">
+
+    <link rel="stylesheet" href="../bootstrap-icons-1.8.3/bootstrap-icons.css">
+</head>
+<body>
+    
+    
+    
+    <section class="form__dispaly">
+        <form action="" method="Post" enctype="multipart/form-data">
+{% csrf_token %}
+        <center> 
+            Admin Create a  blog
+        </center>
+        {% comment %} {% for alldetail_create in alldetail_create  %} {% endcomment %}
+          {{form}}
+        {% comment %} {% endfor %} {% endcomment %}
+        {% comment %} <input type="text"  name = "title" placeholder="Enter title">
+        <textarea name="text" id="" cols="30" rows="10" placeholder="Enter main Informtion to display"></textarea>
+        <input type="file" name="video" style="display: none;" name="" id="videoImage" placeholder="upload video only">
+        <label for="videoImage"> <i class="bi bi-upload"></i> Upload image to display or video</label>
+        <select name="category" id="">
+            <option value="">__category__</option>
+            <option value="movie">movie</option>
+            <option value="comedy">comedy</option>
+            <option value="sport">sport</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="music">music</option>
+            <option value="">website sale</option>
+        </select>
+        <input type="url"  name = "" placeholder="Enter facebook link ">
+        <input type="url"  name = "" placeholder="Enter telegram link ">
+        <input type="url"  name = "" placeholder="Enter instagram link ">
+        <input type="url"  name = "" placeholder="Enter twitter link ">
+        <div> {% endcomment %}
+
+            
+            <a href="/">Back</a>
+            <button type="submit"> save </button>
+        </div>
+    </form>
+</section>
+</body>
+</html>
